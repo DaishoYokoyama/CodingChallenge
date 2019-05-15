@@ -4,12 +4,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import queue.model.QueueImpl;
+import queue.model.ImmutableQueue;
 
 class QueueImplTests {
 	@Test
 	void enQueueTest() {
-		var q1 = new QueueImpl<String>();
+		var q1 = new ImmutableQueue<String>();
 		var q2 = q1.enQueue("item1");
 		assertEquals(q2.head(), "item1"); 
 		assertNotEquals(q1, q2);
@@ -17,7 +17,7 @@ class QueueImplTests {
 	
 	@Test
 	void deQueueTest() {
-		var q1 = new QueueImpl<Integer>(1, 2, 3);
+		var q1 = new ImmutableQueue<Integer>(1, 2, 3);
 		assertFalse(q1.isEmpty());
 		assertEquals(q1.head(), 1);
 		
@@ -36,7 +36,7 @@ class QueueImplTests {
 	
 	@Test
 	void head() {
-		var q1 = new QueueImpl<Integer>(1, 2);	// [1, 2]
+		var q1 = new ImmutableQueue<Integer>(1, 2);	// [1, 2]
 		assertEquals(q1.head(), 1);
 		var q2 =  q1.deQueue();					// [2]
 		assertEquals(q2.head(), 2);
@@ -46,7 +46,7 @@ class QueueImplTests {
 	
 	@Test
 	void isEmpty() {
-		var q1 = new QueueImpl<Integer>();		// []
+		var q1 = new ImmutableQueue<Integer>();		// []
 		assertTrue(q1.isEmpty());
 		var q2 = q1.enQueue(1);					// [1]
 		assertFalse(q2.isEmpty());

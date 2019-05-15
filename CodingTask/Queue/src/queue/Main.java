@@ -1,10 +1,10 @@
 package queue;
 
-import queue.model.QueueImpl;
+import queue.model.ImmutableQueue;
 
 public class Main {
 	public static void main(String[] args) {
-		var q1 = new QueueImpl<String>();
+		var q1 = new ImmutableQueue<String>();
 		var q2 = q1.enQueue("1");
 		
 		System.out.println(q1.isEmpty());	// true

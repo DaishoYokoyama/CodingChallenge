@@ -2,11 +2,11 @@ package queue.model;
 
 import java.util.Arrays;
 
-public class QueueImpl<T> implements Queue<T> {
+public class ImmutableQueue<T> implements Queue<T> {
 	final T[] items;
 	
 	@SafeVarargs
-	public QueueImpl(T... items) {
+	public ImmutableQueue(T... items) {
 		this.items = items;
 	}
 
@@ -14,7 +14,7 @@ public class QueueImpl<T> implements Queue<T> {
 	public Queue<T> enQueue(T item) {
 		var newItems = Arrays.copyOfRange(this.items, 0, this.items.length + 1);
 		newItems[newItems.length - 1] = item;
-		return new QueueImpl<T>(newItems);
+		return new ImmutableQueue<T>(newItems);
 	}
 
 	@Override
@@ -22,7 +22,7 @@ public class QueueImpl<T> implements Queue<T> {
 		if (this.isEmpty()) throw new NullPointerException();
 		
 		var newItems = Arrays.copyOfRange(this.items, 1, this.items.length);
-		return new QueueImpl<T>(newItems);
+		return new ImmutableQueue<T>(newItems);
 	}
 
 	@Override
