@@ -35,12 +35,4 @@ public class ImmutableQueue<T> implements Queue<T> {
 	public boolean isEmpty() {
 		return this.items.length == 0;
 	}
-	
-	public int size() {
-		return this.items.length;
-	}
-	
-	public T[] items() {
-		return this.items;
-	}
 }
