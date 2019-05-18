@@ -28,6 +28,7 @@ public class ImmutableQueue<T> implements Queue<T> {
 	@Override
 	public T head() {
 		if (this.isEmpty()) throw new NullPointerException();
+		
 		return this.items[0];
 	}
 	
