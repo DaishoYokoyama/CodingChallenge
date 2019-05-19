@@ -13,4 +13,8 @@
   5) have the ability to reprocess historical data in case of bugs in the processing logic.
 
 ## Design
-  1) 
+
+
+## Design Overview
+
+![overview](https://github.com/DaishoYokoyama/CodingChallenge/blob/master/DesignQuestion/Design.png)
