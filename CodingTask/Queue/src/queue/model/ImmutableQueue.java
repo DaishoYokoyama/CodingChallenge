@@ -3,7 +3,7 @@ package queue.model;
 import java.util.Arrays;
 
 public class ImmutableQueue<T> implements Queue<T> {
-	final T[] items;
+	private final T[] items;
 	
 	@SafeVarargs
 	public ImmutableQueue(T... items) {
